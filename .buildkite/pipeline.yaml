@@ -15,5 +15,5 @@ steps:
               "bash",
               "-c",
               "export BUILDKITE_ANALYTICS_TOKEN=$(buildkite-agent meta-data get analytics_token) && \
-              pip install --no-cache-dir -r requirements.txt
+              pip install --no-cache-dir -r requirements.txt",
             ]
