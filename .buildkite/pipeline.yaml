@@ -5,8 +5,10 @@ steps:
     fields:
       - text: "Enter your Buildkite Analytics Token"
         key: "analytics_token"
+    key: "buildkite-analytics-configuration"
 
   - label: "🐍 Run Python Tests"
+    depends_on: "buildkite-analytics-configuration"
     plugins:
       - docker#v5.12.0:
           image: "python:3.12"
