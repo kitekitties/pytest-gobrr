@@ -1,5 +1,5 @@
 agents:
-  queue: kubernetes
+  queue: elasticstack
 steps:
   - label: "🐍 Run Python Tests"
     plugins:
