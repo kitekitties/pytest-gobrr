@@ -60,6 +60,17 @@ def test_advanced_feature():
     """This test is skipped."""
     assert False
 
+import time
+
+# Test with sleep to demonstrate spans
+def test_with_spans():
+    """Test with sleep to demonstrate spans in Buildkite Test Analytics."""
+    time.sleep(0.5)  # First span
+    assert True
+    time.sleep(0.3)  # Second span
+    assert True
+    time.sleep(0.2)  # Third span
+    assert True
 
 # XFail test example
 @pytest.mark.xfail(reason="This test is expected to fail")
