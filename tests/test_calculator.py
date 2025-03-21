@@ -69,7 +69,7 @@ def test_with_spans(spans):
         time.sleep(0.5)
         assert True
     with spans.span(name="Second span"):
-        time.sleep(0.3)
+        time.sleep(10)
         assert True
     with spans.span(name="Third span"):
         time.sleep(0.2)
