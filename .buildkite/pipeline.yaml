@@ -1,10 +1,19 @@
 agents:
   queue: elasticstack
 steps:
+  - input: "Buildkite Analytics Configuration"
+    fields:
+      - text: "Enter your Buildkite Analytics Token"
+        key: "analytics_token"
+
   - label: "🐍 Run Python Tests"
     plugins:
       - docker#v5.12.0:
           image: "python:3.12"
           mount-buildkite-agent: false
-          command:
-            ["bash", "-c", "pip install -r requirements.txt && pytest -v"]
+          command: [
+              "bash",
+              "-c",
+              "export BUILDKITE_ANALYTICS_TOKEN=$(buildkite-agent meta-data get analytics_token) && \
+              pip install --no-cache-dir -r requirements.txt
+            ]
