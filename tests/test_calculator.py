@@ -65,13 +65,13 @@ import time
 # Test with sleep to demonstrate spans
 def test_with_spans(spans):
     """Test with sleep to demonstrate spans in Buildkite Test Analytics."""
-    with spans.span(name="First span"):
+    with spans.measure('sleep', 'Short sleep'):
         time.sleep(0.5)
         assert True
-    with spans.span(name="Second span"):
+    with spans.measure('sleep', 'Long sleep'):
         time.sleep(10)
         assert True
-    with spans.span(name="Third span"):
+    with spans.measure('sleep', 'Quick sleep'):
         time.sleep(0.2)
         assert True
 
