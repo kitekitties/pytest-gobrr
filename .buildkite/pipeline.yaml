@@ -12,6 +12,6 @@ steps:
     plugins:
       - docker#v5.12.0:
           image: "python:3.12"
-          mount-buildkite-agent: false
-          environment: BUILDKITE_ANALYTICS_TOKEN=$(buildkite-agent meta-data get analytics_token)
+          # mount-buildkite-agent: false
+          env: BUILDKITE_ANALYTICS_TOKEN=$(buildkite-agent meta-data get analytics_token)
           command: ["pip install --no-cache-dir -r requirements.txt && pytest"]
