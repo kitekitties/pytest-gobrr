@@ -14,6 +14,4 @@ steps:
           image: "python:3.12"
           mount-buildkite-agent: false
           environment: BUILDKITE_ANALYTICS_TOKEN=$(buildkite-agent meta-data get analytics_token)
-          commands:
-            - pip install --no-cache-dir -r requirements.txt
-            - pytest
+          command: ["pip install --no-cache-dir -r requirements.txt && pytest"]
