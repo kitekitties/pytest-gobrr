@@ -3,7 +3,6 @@ steps:
     plugins:
       - docker#v5.12.0:
           image: "python:3.12"
-          workdir: .
           mount-buildkite-agent: false
           command:
             ["bash", "-c", "pip install -r requirements.txt && pytest -v"]
