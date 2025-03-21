@@ -1,3 +1,5 @@
+agents:
+  queue: kubernetes
 steps:
   - label: "🐍 Run Python Tests"
     plugins:
